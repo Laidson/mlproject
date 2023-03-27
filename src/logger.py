@@ -17,5 +17,7 @@ logging.basicConfig(
     level=logging.INFO
 )
 
-
+#TO test if was working
+# if __name__=="__main__":
+#     logging.info("LOGING TEST")
 

@@ -1,7 +1,7 @@
 https://github.com/krishnaik06/mlproject
 https://www.youtube.com/watch?v=1m3CPP-93RI&t=600s
 
-continue 39 min
+continue 1:17 min
 
 
 MLOPS: A COMPLETE GUIDE TO MACHINE LEARNING OPERATIONS | MLOPS VS DEVOPS
