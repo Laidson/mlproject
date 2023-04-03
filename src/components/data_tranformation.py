@@ -94,9 +94,8 @@ class DataTransformation:
 
             logging.info('Read train test data completed')
             logging.info('Starting the preprocessing object')
-
-            preprocessing_object = self.get_data_tranformer_object()
             
+            #deleting traget column
             input_feature_train_df = train_df.drop(columns=[self.target_column], axis=1)
             target_feature_train_df = train_df[self.target_column]
 
@@ -106,6 +105,8 @@ class DataTransformation:
             logging.info(
                     f"Applying preprocessing object on training dataframe and testing dataframe."
                 )
+            
+            preprocessing_object = self.get_data_tranformer_object()
             
             input_feature_train_arr = preprocessing_object.fit_transform(input_feature_train_df) 
             input_feature_test_arr = preprocessing_object.transform(input_feature_test_df)
