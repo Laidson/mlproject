@@ -66,6 +66,7 @@ if __name__=="__main__":
 
     #train model
     model_trainer = ModelTrainer()
-    print(model_trainer.initiate_model_trainer(train_array=train_array, test_array=test_array))
+    model_report, models = model_trainer.initiate_model_trainer(train_array=train_array, test_array=test_array)
+    print(model_trainer.get_best_model(model_report=model_report, models=models))
 
 

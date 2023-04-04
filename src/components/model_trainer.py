@@ -53,33 +53,35 @@ class ModelTrainer:
                                              X_test=X_test, y_test=y_test,                                              
                                              models=models)
 
-    
-            
-            # Get the best model score from model_report scores
-            best_model_score = max(sorted(model_report.values()))
+            logging.info('Different models trained')
 
-            # Get the best model name
-            best_model_name = list(model_report.keys())[
-                list(model_report.values()).index(best_model_score)
-            ]
 
-            best_model = models[best_model_name]
-
-            if best_model_score < 0.6:
-                raise CustomException('No model found with score > 0.6')
-
-            logging.info('best model founded on train and test dataset')
-
-            save_object(
-                file_path=self.model_trainer_config.trained_model_file_path,
-                obj=best_model
-            )
-
-            predicted = best_model.predict(X_test)
-            r2_square = r2_score(y_test, predicted)
-            return r2_square
+            return model_report, models
         
 
         except Exception as e:
             CustomException(e, sys)
-        
+
+    def get_best_model(self, model_report, models):
+
+        # Get the best model score from model_report scores
+        best_model_score = max(sorted(model_report.values()))
+
+        # Get the best model name
+        best_model_name = list(model_report.keys())[
+            list(model_report.values()).index(best_model_score)
+        ]
+
+        best_model = models[best_model_name]
+
+        if best_model_score < 0.6:
+            raise CustomException('No model found with score > 0.6')
+
+        logging.info('best model founded on train and test dataset')
+
+        save_object(
+            file_path=self.model_trainer_config.trained_model_file_path,
+            obj=best_model
+        )
+
+        return best_model_score
