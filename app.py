@@ -7,7 +7,9 @@ import pickle
 from sklearn.preprocessing import StandardScaler
 
 from src.pipeline.predic_pipeline import CustomData, PredictPipeline
+from src.pipeline.train_pipeline import TrainPipeline
 from src.exception import CustomException
+
 
 application=Flask(__name__)
 
@@ -46,6 +48,27 @@ def predict_datapoint():
 
 
         return render_template('home.html',results=results[0])
+
+# Define route for retraining the model
+@app.route('/retrain', methods=['GET','POST'])
+
+def retrain_model():
+    if request.method == 'GET':
+        return render_template('retrain.html', new_mse='', old_mse='', improve='')
+    
+    elif request.method == 'POST':
+        train_pipe = TrainPipeline()
+        metric = train_pipe.main()
+        improve = (metric['new_metric'] - metric['old_metric'])*1000
+
+        return render_template('retrain.html', new_mse=metric['new_metric'], 
+                                                old_mse=metric['old_metric'],
+                                                 improve = improve)
+    else:
+        return render_template('home.html')
+
+pass
+
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", debug=True)

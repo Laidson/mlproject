@@ -31,7 +31,7 @@ class DataIngestion:
         logging.info('Starting the data ingestion method')
         
         try:
-            df = pd.read_csv('notebook\data\stud.csv')
+            df = pd.read_csv('notebook\data\stud.csv') ##TODO Connection with database to get the data
             logging.info('import data from data source as dataframe')
 
             os.makedirs(os.path.dirname(self.ingestion_config.train_data_path), exist_ok=True)
@@ -68,5 +68,5 @@ if __name__=="__main__":
     model_trainer = ModelTrainer()
     model_report, models = model_trainer.initiate_model_trainer(train_array=train_array, test_array=test_array)
     print(model_trainer.get_best_model(model_report=model_report, models=models))
-
+    
 

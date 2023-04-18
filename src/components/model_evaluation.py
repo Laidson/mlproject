@@ -103,11 +103,11 @@ class ModelEvaluation:
             report = {} 
 
             X_train,y_train,X_test,y_test = (
-                train_array[:,:-1],
-                train_array[:,-1],
-                test_array[:,:-1],
-                test_array[:,-1]                
-            )          
+                                            train_array[:,:-1],
+                                            train_array[:,-1],
+                                            test_array[:,:-1],
+                                            test_array[:,-1]                
+                                            )          
 
             model.set_params(**param)
             model.fit(X_train, y_train) #train model
@@ -147,3 +147,5 @@ if __name__ == '__main__':
     mde.evaluate_tuned_models(train_array, test_array, tuned_model, best_param)
 
     #TODO get bestmodel pass to production
+
+

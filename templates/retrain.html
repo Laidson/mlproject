@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Retrain Model</title>
+</head>
+<body>
+    <h1>Retrain Model</h1>
+    <p>The new model performance is {{new_mse}}</p>
+    <p>The old model performance is {{old_mse}}</p>
+    <p>The improvement is: {{improve}}%</p>
+    <form  action="/retrain" method="post">
+        <!-- Add any additional form fields for retraining the model -->
+        <input type="submit" value="Retrain Model">
+    </form>
+</body>
+</html>
