@@ -1,12 +1,7 @@
-# Project Name
-Student Math Score Prediction
+# Student Math Score Prediction
 
 ## Project Description
 This project aims to predict the math score of a student based on various input parameters. The model selection is based on the lowest Mean Squared Error (MSE) value. The input parameters include numerical and categorical features.
-
-## Installation
-To install the necessary dependencies, run the following command:
-pip install -r requirements.txt
 
 ## Pipeline
 To train and test the model, a pipeline was created to perform feature engineering and data manipulation to organize the input data. The data input is passed through a transformation using num_pipeline and cat_pipeline.
@@ -40,10 +35,12 @@ This project provides an easy-to-use and accurate method to predict a student's 
 
 ## References
 https://github.com/krishnaik06/mlproject
+
 https://www.youtube.com/watch?v=1m3CPP-93RI&t=600s
 
 
 MLOPS: A COMPLETE GUIDE TO MACHINE LEARNING OPERATIONS | MLOPS VS DEVOPS
+
 https://ashutoshtripathi.com/2021/08/18/mlops-a-complete-guide-to-machine-learning-operations-mlops-vs-devops/
 
 
