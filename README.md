@@ -11,27 +11,28 @@ pip install -r requirements.txt
 ## Pipeline
 To train and test the model, a pipeline was created to perform feature engineering and data manipulation to organize the input data. The data input is passed through a transformation using num_pipeline and cat_pipeline.
 
-num_pipeline: This pipeline performs the following operations:
+- num_pipeline: This pipeline performs the following operations:
+    - Missing values are imputed using the median strategy.
+    - Scaling is done using StandardScaler.
 
-Missing values are imputed using the median strategy.
-Scaling is done using StandardScaler.
-cat_pipeline: This pipeline performs the following operations:
+- cat_pipeline: This pipeline performs the following operations:
 
-Missing values are imputed using the most frequent strategy.
-OneHotEncoding is performed.
-Scaling is done using StandardScaler with_mean=False.
+    - Missing values are imputed using the most frequent strategy.
+    - OneHotEncoding is performed.
+    - Scaling is done using StandardScaler with_mean=False.
 
 ## Usage
 To test the project, run the app.py file on your local host. You can use the following endpoints to make predictions and view model performance:
 
-/predictdata: This endpoint is used to make predictions based on the input parameters.
-/retrain: This endpoint is used to retrain the model based on new data. Here, you can also view the model's performance. If the new model has a lower MSE value, it will replace the old model in the production environment. If not, the old model will be kept in the production environment.
+- /predictdata: This endpoint is used to make predictions based on the input parameters.
+- /retrain: This endpoint is used to retrain the model based on new data. Here, you can also view the model's performance. If the new model has a lower MSE value, it will replace the old model in the production environment. If not, the old model will be kept in the production environment.
 Installation
+
 To install the dependencies for this project, run the following command:
 
-```bash
+bash
 Copy code
-pip install -r requirements.txt'''
+pip install -r requirements.txt
 
 ## Conclusion
 This project provides an easy-to-use and accurate method to predict a student's math score based on various input parameters. The model selection process ensures that the best model is chosen based on the lowest MSE value. With the ability to retrain the model on new data, this project can provide continuous improvement to the model's performance.
