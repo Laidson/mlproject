@@ -31,7 +31,7 @@ To install the dependencies for this project, run the following command:
 
 ```bash
 Copy code
-pip install -r requirements.txt ```
+pip install -r requirements.txt
 
 ## Conclusion
 This project provides an easy-to-use and accurate method to predict a student's math score based on various input parameters. The model selection process ensures that the best model is chosen based on the lowest MSE value. With the ability to retrain the model on new data, this project can provide continuous improvement to the model's performance.
